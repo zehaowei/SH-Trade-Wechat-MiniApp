@@ -13,7 +13,7 @@ public class UserController {
     @Autowired
     UserServiceImpl userService;
 
-    @PostMapping("/userservice/api/v1/user")
+    @PostMapping("/userservice/api/user")
     @ResponseStatus(HttpStatus.CREATED)
     public UserAuth register(@RequestBody UserAuth userAuth) throws DataIllegalException {
         return userService.register(userAuth);

@@ -16,6 +16,9 @@ public class Constant {
 
     private long token_expires_hours;
 
+    private String header_key_token;
+    private String header_key_current_userid;
+
     public String getIdentity_type_username() {
         return identity_type_username;
     }
@@ -46,5 +49,15 @@ public class Constant {
 
     public void setToken_expires_hours(long token_expires_hours) {
         this.token_expires_hours = token_expires_hours;
+    }
+
+    public String getHeader_key_token() { return header_key_token; }
+
+    public void setHeader_key_token(String header_key_token) { this.header_key_token = header_key_token; }
+
+    public String getHeader_key_current_userid() { return header_key_current_userid; }
+
+    public void setHeader_key_current_userid(String header_key_current_userid) {
+        this.header_key_current_userid = header_key_current_userid;
     }
 }

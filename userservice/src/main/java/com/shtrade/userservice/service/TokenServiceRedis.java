@@ -4,7 +4,6 @@ import com.shtrade.userservice.conf.Constant;
 import com.shtrade.userservice.entity.AuthToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.serializer.JdkSerializationRedisSerializer;
 import org.springframework.stereotype.Service;
 
 import java.util.UUID;
