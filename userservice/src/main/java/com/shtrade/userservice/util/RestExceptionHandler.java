@@ -12,16 +12,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 @ControllerAdvice
-public class RestExceptionHandler
-{
+public class RestExceptionHandler {
     private static Logger logger = LoggerFactory.getLogger(RestExceptionHandler.class);
 
     @ExceptionHandler(value = DataIllegalException.class)
     @ResponseBody
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public Map<String,Object> handleResourceNotFoundException(DataIllegalException e)
-    {
-        Map<String,Object> result = new HashMap<>();
+    public Map<String, Object> handleResourceNotFoundException(DataIllegalException e) {
+        Map<String, Object> result = new HashMap<>();
         result.put("code", e.getCode());
         result.put("message", e.getMessage());
         logger.error(e.getMessage(), e);

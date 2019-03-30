@@ -14,7 +14,7 @@ public class Constant {
 
     private String user_avatar_default;
 
-    private long token_expires_hours;
+    private long token_expires_time;
 
     private String header_key_token;
     private String header_key_current_userid;
@@ -43,19 +43,25 @@ public class Constant {
         this.user_avatar_default = user_avatar_default;
     }
 
-    public long getToken_expires_hours() {
-        return token_expires_hours;
+    public long getToken_expires_time() {
+        return token_expires_time;
     }
 
-    public void setToken_expires_hours(long token_expires_hours) {
-        this.token_expires_hours = token_expires_hours;
+    public void setToken_expires_time(long token_expires_time) {
+        this.token_expires_time = token_expires_time;
     }
 
-    public String getHeader_key_token() { return header_key_token; }
+    public String getHeader_key_token() {
+        return header_key_token;
+    }
 
-    public void setHeader_key_token(String header_key_token) { this.header_key_token = header_key_token; }
+    public void setHeader_key_token(String header_key_token) {
+        this.header_key_token = header_key_token;
+    }
 
-    public String getHeader_key_current_userid() { return header_key_current_userid; }
+    public String getHeader_key_current_userid() {
+        return header_key_current_userid;
+    }
 
     public void setHeader_key_current_userid(String header_key_current_userid) {
         this.header_key_current_userid = header_key_current_userid;

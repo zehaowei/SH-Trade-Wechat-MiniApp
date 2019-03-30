@@ -1,17 +1,22 @@
 package com.fantj.sbmybatis.model;
 
+import io.swagger.annotations.ApiModelProperty;
 import org.springframework.stereotype.Component;
 
 @Component
 public class UserAuth {
+
     private Integer id;
 
     private Integer userId;
 
+    @ApiModelProperty(value="登录方式", required=true)
     private String identityType;
 
+    @ApiModelProperty(value="用户名", required=true)
     private String identifier;
 
+    @ApiModelProperty(value="密码", required=true)
     private String credential;
 
     public Integer getId() {

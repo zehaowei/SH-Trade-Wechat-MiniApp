@@ -15,12 +15,16 @@ import javax.transaction.Transactional;
 
 @Service
 @Transactional
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
-    @Autowired private UserMapper userMapper;
-    @Autowired private UserAuthMapper userAuthMapper;
-    @Autowired private Constant constant;
-    @Autowired private TokenServiceRedis tokenServiceRedis;
+    @Autowired
+    private UserMapper userMapper;
+    @Autowired
+    private UserAuthMapper userAuthMapper;
+    @Autowired
+    private Constant constant;
+    @Autowired
+    private TokenServiceRedis tokenServiceRedis;
 
     @Override
     public int update(User user) {

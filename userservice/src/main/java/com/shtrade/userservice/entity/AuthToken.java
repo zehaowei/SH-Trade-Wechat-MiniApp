@@ -1,10 +1,13 @@
 package com.shtrade.userservice.entity;
 
+import io.swagger.annotations.ApiModelProperty;
+
 public class AuthToken {
-    //用户id
+
+    @ApiModelProperty("用户ID")
     private int userId;
 
-    //随机生成的uuid
+    @ApiModelProperty("随机Token")
     private String token;
 
     public AuthToken(int userId, String token) {

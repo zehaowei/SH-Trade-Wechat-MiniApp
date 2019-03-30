@@ -1,13 +1,14 @@
 package com.shtrade.userservice.controller;
 
-import com.fantj.sbmybatis.model.User;
 import com.fantj.sbmybatis.model.UserAuth;
+import com.shtrade.userservice.conf.Constant;
 import com.shtrade.userservice.entity.AuthToken;
 import com.shtrade.userservice.service.TokenServiceRedis;
 import com.shtrade.userservice.service.UserServiceImpl;
-import com.shtrade.userservice.util.CurrentUser;
 import com.shtrade.userservice.util.DataIllegalException;
 import com.shtrade.userservice.util.UserAuthorization;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -29,10 +30,13 @@ public class TokenController {
     }
 
     @DeleteMapping("/userservice/api/token")
+    @ApiImplicitParams({
+            @ApiImplicitParam(name="cookie",value="用户身份验证token",required=true,paramType="header"),
+            @ApiImplicitParam(name="userId",value="无需提供，在cookie字段中提供token即可",paramType="path")})
     @UserAuthorization
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    public ResponseEntity logout(@CurrentUser User user) {
-        tokenServiceRedis.deleteToken(user.getId());
+    public ResponseEntity logout(@RequestHeader(value="currentUserId") int userId) {
+        tokenServiceRedis.deleteToken(userId);
         return null;
     }
 

@@ -1,7 +1,6 @@
 package com.shtrade.userservice.entity;
 
-public class ErrorResult
-{
+public class ErrorResult {
     /**
      * 错误内容
      */
@@ -35,7 +34,7 @@ public class ErrorResult
     }
 
 
-    public enum ErrorCode{
+    public enum ErrorCode {
 
         // 用户不存在
         USER_NOT_FOUND(100),
@@ -52,13 +51,11 @@ public class ErrorResult
 
         private int code;
 
-        public int getCode()
-        {
+        public int getCode() {
             return code;
         }
 
-        ErrorCode(int code)
-        {
+        ErrorCode(int code) {
             this.code = code;
         }
     }
