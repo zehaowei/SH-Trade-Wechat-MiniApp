@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fantj.sbmybatis.mapper.OrderMapper">
+  <resultMap id="BaseResultMap" type="com.fantj.sbmybatis.model.Order">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="seller" jdbcType="INTEGER" property="seller" />
+    <result column="buyer" jdbcType="INTEGER" property="buyer" />
+    <result column="status" jdbcType="VARCHAR" property="status" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, seller, buyer, status
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from orders
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from orders
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.fantj.sbmybatis.model.Order">
+    insert into orders (id, seller, buyer, 
+      status)
+    values (#{id,jdbcType=INTEGER}, #{seller,jdbcType=INTEGER}, #{buyer,jdbcType=INTEGER}, 
+      #{status,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.fantj.sbmybatis.model.Order">
+    insert into orders
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="seller != null">
+        seller,
+      </if>
+      <if test="buyer != null">
+        buyer,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="seller != null">
+        #{seller,jdbcType=INTEGER},
+      </if>
+      <if test="buyer != null">
+        #{buyer,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.fantj.sbmybatis.model.Order">
+    update orders
+    <set>
+      <if test="seller != null">
+        seller = #{seller,jdbcType=INTEGER},
+      </if>
+      <if test="buyer != null">
+        buyer = #{buyer,jdbcType=INTEGER},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.fantj.sbmybatis.model.Order">
+    update orders
+    set seller = #{seller,jdbcType=INTEGER},
+      buyer = #{buyer,jdbcType=INTEGER},
+      status = #{status,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

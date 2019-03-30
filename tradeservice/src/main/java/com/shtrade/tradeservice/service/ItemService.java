@@ -1,4 +1,8 @@
 package com.shtrade.tradeservice.service;
 
-public class ItemService {
+import com.shtrade.tradeservice.entity.ItemPublish;
+
+public interface ItemService {
+
+    public ItemPublish createItem(ItemPublish itemPublish, int sellerId);
 }
