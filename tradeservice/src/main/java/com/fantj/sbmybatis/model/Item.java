@@ -14,7 +14,7 @@ public class Item {
     @ApiModelProperty(value="商品价格")
     private Integer price;
 
-    @ApiModelProperty(value="商品介绍")
+    @ApiModelProperty(value="商品备注")
     private String notes;
 
     @ApiModelProperty(value="交易地址")

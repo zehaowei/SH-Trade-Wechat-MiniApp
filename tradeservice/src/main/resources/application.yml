@@ -28,5 +28,17 @@ spring:
     poolPreparedStatements: true
     maxOpenPreparedStatements: 20
 
+  elasticsearch:
+    cluster-name: elasticsearch
+    cluster-nodes: 127.0.0.1:9300
+
+
 mybatis:
   mapper-locations: classpath:mapping/*.xml
+
+pagehelper:
+  helper-dialect: mysql
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+  page-size-zero: true

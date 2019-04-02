@@ -2,10 +2,16 @@ package com.shtrade.tradeservice.service;
 
 import com.fantj.sbmybatis.mapper.ItemMapper;
 import com.fantj.sbmybatis.model.Item;
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.shtrade.tradeservice.conf.Constant;
+import com.shtrade.tradeservice.entity.ItemBrief;
+import com.shtrade.tradeservice.entity.ItemPost;
 import com.shtrade.tradeservice.entity.ItemPublish;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class ItemServiceImpl implements ItemService {
@@ -40,5 +46,26 @@ public class ItemServiceImpl implements ItemService {
         } else {
             return null;
         }
+    }
+
+    @Override
+    public PageInfo<ItemBrief> selectItemBriefList(Integer page, Integer size) {
+        PageHelper.startPage(page, size);
+        List<ItemBrief> itemBriefList = itemMapper.selectItemBriefList();
+        PageInfo<ItemBrief> pageInfo = new PageInfo<>(itemBriefList);
+        return pageInfo;
+    }
+
+    @Override
+    public PageInfo<ItemPost> selectItemPostList(Integer page, Integer size, Integer seller) {
+        PageHelper.startPage(page, size);
+        List<ItemPost> itemPostList = itemMapper.selectItemPostListByUserId(seller);
+        PageInfo<ItemPost> pageInfo = new PageInfo<>(itemPostList);
+        return pageInfo;
+    }
+
+    @Override
+    public Item selectItemDetail(int id) {
+        return itemMapper.selectByPrimaryKey(id);
     }
 }

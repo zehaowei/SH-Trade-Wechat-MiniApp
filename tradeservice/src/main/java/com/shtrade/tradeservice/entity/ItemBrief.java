@@ -13,7 +13,7 @@ public class ItemBrief extends ItemBase{
     @ApiModelProperty(value="商品价格", required = true)
     private Integer price;
 
-    @ApiModelProperty(value="商品介绍")
+    @ApiModelProperty(value="商品备注")
     private String notes;
 
     public String getName() {

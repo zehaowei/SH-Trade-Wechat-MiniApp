@@ -1,4 +1,8 @@
 package com.shtrade.tradeservice.util;
 
-public class ItemRepository {
+import com.shtrade.tradeservice.entity.ItemElasticIndex;
+import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
+
+public interface ItemRepository extends ElasticsearchRepository<ItemElasticIndex,Integer> {
+
 }
