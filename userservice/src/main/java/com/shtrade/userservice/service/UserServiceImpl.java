@@ -36,6 +36,7 @@ public class UserServiceImpl implements UserService {
         UserAuth result = userAuthMapper.selectByTypeAndIdentifier(
                 userAuth.getIdentityType(), userAuth.getIdentifier());
         String identityType = userAuth.getIdentityType();
+
         if (identityType.equals(constant.getIdentity_type_username())) {
             if (result == null) {
                 User user = new User();
@@ -67,6 +68,7 @@ public class UserServiceImpl implements UserService {
         return userMapper.selectByPrimaryKey(id);
     }
 
+    @Override
     public AuthToken login(UserAuth userAuth) throws DataIllegalException {
         UserAuth result = userAuthMapper.selectByTypeAndIdentifier(userAuth.getIdentityType(),
                 userAuth.getIdentifier());

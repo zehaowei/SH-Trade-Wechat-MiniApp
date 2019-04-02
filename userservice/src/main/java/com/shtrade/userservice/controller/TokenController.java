@@ -30,11 +30,11 @@ public class TokenController {
     }
 
     @DeleteMapping("/userservice/api/token")
+    @UserAuthorization
+    @ResponseStatus(HttpStatus.NO_CONTENT)
     @ApiImplicitParams({
             @ApiImplicitParam(name="cookie",value="用户身份验证token",required=true,paramType="header"),
             @ApiImplicitParam(name="userId",value="无需提供，在cookie字段中提供token即可",paramType="path")})
-    @UserAuthorization
-    @ResponseStatus(HttpStatus.NO_CONTENT)
     public ResponseEntity logout(@RequestHeader(value="currentUserId") int userId) {
         tokenServiceRedis.deleteToken(userId);
         return null;
