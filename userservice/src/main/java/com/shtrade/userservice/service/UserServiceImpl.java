@@ -64,11 +64,6 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User selectById(int id) {
-        return userMapper.selectByPrimaryKey(id);
-    }
-
-    @Override
     public AuthToken login(UserAuth userAuth) throws DataIllegalException {
         UserAuth result = userAuthMapper.selectByTypeAndIdentifier(userAuth.getIdentityType(),
                 userAuth.getIdentifier());
@@ -81,5 +76,15 @@ public class UserServiceImpl implements UserService {
                 throw new DataIllegalException("Password is incorrect", ErrorResult.ErrorCode.USER_PASSWD_ERROR.getCode());
             }
         }
+    }
+
+    @Override
+    public User selectById(int id) {
+        return userMapper.selectByPrimaryKey(id);
+    }
+
+    @Override
+    public String getIdentifierByUserId(int userId) {
+        return userAuthMapper.selectIdentifierByUserId(userId);
     }
 }

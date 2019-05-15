@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.shtrade</groupId>
-    <artifactId>userservice</artifactId>
+    <artifactId>tradeservice</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>userservice</name>
+    <name>tradeservice</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -39,10 +39,14 @@
             <version>2.0.0</version>
         </dependency>
         <!--eureka服务治理-->
-        <!--<dependency>-->
-        <!--<groupId>org.springframework.cloud</groupId>-->
-        <!--<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>-->
-        <!--</dependency>-->
+        <dependency>
+        <groupId>org.springframework.cloud</groupId>
+        <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
         <!--redis-->
         <dependency>
             <groupId>org.springframework.boot</groupId>

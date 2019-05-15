@@ -28,7 +28,8 @@ public class TokenServiceRedis implements TokenService {
     public AuthToken createToken(int userId) {
         //使用uuid作为源token
         String token = UUID.randomUUID().toString().replace("-", "");
-        AuthToken authToken = new AuthToken(userId, token);
+        String authentication = Integer.toString(userId) + "_" + token;
+        AuthToken authToken = new AuthToken(userId, authentication);
         //存储到redis并设置过期时间
         redis.boundValueOps(((Integer) userId).toString()).set(token, constant.getToken_expires_time(), TimeUnit.DAYS);
         return authToken;

@@ -34,16 +34,20 @@ public class TokenController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     @ApiImplicitParams({
             @ApiImplicitParam(name="cookie",value="用户身份验证token",required=true,paramType="header"),
-            @ApiImplicitParam(name="userId",value="无需提供，在cookie字段中提供token即可",paramType="path")})
-    public ResponseEntity logout(@RequestHeader(value="currentUserId") int userId) {
+            @ApiImplicitParam(name="userId",value="无需提供，在cookie字段中提供token即可",paramType="header")})
+    public ResponseEntity logout(@RequestAttribute(value="currentUserId") int userId) {
         tokenServiceRedis.deleteToken(userId);
         return null;
     }
 
-//    @GetMapping("/userservice/api/v1/token")
-//    @ResponseStatus(HttpStatus.OK)
-//    public AuthToken getUserToken(@RequestBody AuthToken authToken) {
-//
-//    }
+    @GetMapping("/userservice/api/token")
+    @ResponseStatus(HttpStatus.OK)
+    public AuthToken getUserToken(@RequestParam("auth") String authorization) {
+        AuthToken token = tokenServiceRedis.getToken(authorization);
+        if (tokenServiceRedis.checkToken(token))
+            return token;
+        else
+            return null;
+    }
 
 }

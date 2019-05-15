@@ -16,4 +16,6 @@ public interface UserService {
 
     public User selectById(int id);
 
+    public String getIdentifierByUserId(int userId);
+
 }

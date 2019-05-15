@@ -1,6 +1,6 @@
 package com.shtrade.tradeservice.conf;
 
-import com.shtrade.userservice.util.AuthInterceptor;
+import com.shtrade.tradeservice.util.AuthInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
@@ -15,7 +15,6 @@ public class ServiceMVCConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(authInterceptor)
-                .excludePathPatterns("/error")
-                .addPathPatterns("userservice/api/v1/token");
+                .addPathPatterns("/tradeservice/api/**");
     }
 }

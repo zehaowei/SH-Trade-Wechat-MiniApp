@@ -3,10 +3,10 @@ server:
   port: 7000
 
 #eureka主机名，会在控制页面中显示
-#enreka:
-#  client:
-#    serviceUrl:
-#      defaultZone: http://localhost:8000/eureka/
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
 
 #服务名
 spring:

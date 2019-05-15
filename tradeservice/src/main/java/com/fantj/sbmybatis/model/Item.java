@@ -2,6 +2,7 @@ package com.fantj.sbmybatis.model;
 
 import io.swagger.annotations.ApiModelProperty;
 
+
 public class Item {
     private Integer id;
 
@@ -12,7 +13,7 @@ public class Item {
     private String imgUrl;
 
     @ApiModelProperty(value="商品价格")
-    private Integer price;
+    private Double price;
 
     @ApiModelProperty(value="商品备注")
     private String notes;
@@ -25,6 +26,9 @@ public class Item {
 
     @ApiModelProperty(value="商品状态")
     private String status;
+
+    @ApiModelProperty(value="商品发布日期")
+    private String date;
 
     public Integer getId() {
         return id;
@@ -50,11 +54,11 @@ public class Item {
         this.imgUrl = imgUrl == null ? null : imgUrl.trim();
     }
 
-    public Integer getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(Integer price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 
@@ -89,4 +93,13 @@ public class Item {
     public void setStatus(String status) {
         this.status = status == null ? null : status.trim();
     }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
 }

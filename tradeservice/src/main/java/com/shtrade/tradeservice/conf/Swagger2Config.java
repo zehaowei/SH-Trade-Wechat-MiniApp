@@ -21,7 +21,7 @@ public class Swagger2Config {
                 .apiInfo(apiInfo())
                 .select()
                 //为当前包路径
-                .apis(RequestHandlerSelectors.basePackage("com.shtrade.userservice"))
+                .apis(RequestHandlerSelectors.basePackage("com.shtrade.tradeservice"))
                 .paths(PathSelectors.any())
                 .build();
     }
@@ -30,13 +30,13 @@ public class Swagger2Config {
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 //页面标题
-                .title("SH-Trade User-Service API")
+                .title("SH-Trade Trade-Service API")
                 //创建人
                 .contact(new Contact("Zehao Wei", "", "weizehao@whu.edu.cn"))
                 //版本号
                 .version("1.0")
                 //描述
-                .description("Microservice User-Service API Description")
+                .description("Microservice Trade-Service API Description")
                 .build();
     }
 }

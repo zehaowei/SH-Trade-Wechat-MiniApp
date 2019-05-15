@@ -13,6 +13,8 @@ public interface UserAuthMapper {
 
     UserAuth selectByTypeAndIdentifier(String identityType, String identifier);
 
+    String selectIdentifierByUserId(Integer userId);
+
     int updateByPrimaryKeySelective(UserAuth record);
 
     int updateByPrimaryKey(UserAuth record);

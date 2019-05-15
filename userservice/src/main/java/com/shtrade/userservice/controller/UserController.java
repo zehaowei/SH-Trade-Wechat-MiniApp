@@ -15,18 +15,36 @@ public class UserController {
     @Autowired
     UserServiceImpl userService;
 
-    @PostMapping("/userservice/api/user")
+    @PostMapping("/userservice/api/users")
     @ResponseStatus(HttpStatus.CREATED)
     @ApiOperation("用户注册")
     public UserAuth register(@RequestBody UserAuth userAuth) throws DataIllegalException {
         return userService.register(userAuth);
     }
 
-    @GetMapping("/userservice/api/user")
+    @PutMapping("/userservice/api/users")
+    @ResponseStatus(HttpStatus.CREATED)
+    @ApiOperation("更新用户昵称和头像")
+    public User putUserInfo(@RequestBody User user) throws DataIllegalException {
+        if (userService.update(user) == 1) {
+            return user;
+        } else {
+            return null;
+        }
+    }
+
+    @GetMapping("/userservice/api/users/{userId}")
     @ResponseStatus(HttpStatus.OK)
     @ApiOperation("获取用户信息")
-    public User getUser(@RequestParam("userId") int userId) {
+    public User getUser(@PathVariable("userId") int userId) {
         return userService.selectById(userId);
+    }
+
+    @GetMapping("/userservice/api/identifier/{userId}")
+    @ResponseStatus(HttpStatus.OK)
+    @ApiOperation("获取用户名")
+    public String getIdentifier(@PathVariable("userId") int userId) {
+        return userService.getIdentifierByUserId(userId);
     }
 
 }

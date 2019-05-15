@@ -11,7 +11,7 @@ public class ItemBrief extends ItemBase{
     private String imgUrl;
 
     @ApiModelProperty(value="商品价格", required = true)
-    private Integer price;
+    private Double price;
 
     @ApiModelProperty(value="商品备注")
     private String notes;
@@ -32,11 +32,11 @@ public class ItemBrief extends ItemBase{
         this.imgUrl = imgUrl == null ? null : imgUrl.trim();
     }
 
-    public Integer getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(Integer price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 

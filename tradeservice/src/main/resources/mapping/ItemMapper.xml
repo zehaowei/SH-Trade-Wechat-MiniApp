@@ -5,14 +5,15 @@
     <id column="id" jdbcType="INTEGER" property="id" />
     <result column="name" jdbcType="VARCHAR" property="name" />
     <result column="img_url" jdbcType="VARCHAR" property="imgUrl" />
-    <result column="price" jdbcType="INTEGER" property="price" />
+    <result column="price" jdbcType="DOUBLE" property="price" />
     <result column="notes" jdbcType="VARCHAR" property="notes" />
     <result column="address" jdbcType="VARCHAR" property="address" />
     <result column="seller" jdbcType="INTEGER" property="seller" />
     <result column="status" jdbcType="VARCHAR" property="status" />
+    <result column="date" jdbcType="VARCHAR" property="date"/>
   </resultMap>
   <sql id="Base_Column_List">
-    id, name, img_url, price, notes, address, seller, status
+    id, name, img_url, price, notes, address, seller, status, date
   </sql>
 
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
@@ -26,13 +27,42 @@
     select
     id, name, img_url as "imgUrl", price, notes
     from items
+    where status = "onsale"
+  </select>
+
+  <select id="selectItemPublishById" resultType="com.shtrade.tradeservice.entity.ItemPublish">
+    select
+    id, name, img_url as "imgUrl", price, notes, address
+    from items
+    where id = #{id,jdbcType=INTEGER}
   </select>
 
   <select id="selectItemPostListByUserId" parameterType="java.lang.Integer" resultType="com.shtrade.tradeservice.entity.ItemPost">
     select
-    id, name, img_url as "imgUrl", price, notes, status
+    id, name, img_url as "imgUrl", price, notes, status, date, address
     from items
     where seller = #{seller,jdbcType=INTEGER}
+  </select>
+
+  <select id="selectItemPostListByUserIdAndStatus" resultType="com.shtrade.tradeservice.entity.ItemPost">
+    select
+    id, name, img_url as "imgUrl", price, notes, status, date, address
+    from items
+    where seller = #{arg0} and status = #{arg1}
+  </select>
+
+  <select id="selectStatusByPK" parameterType="java.lang.Integer" resultType="java.lang.String">
+    select
+    status
+    from items
+    where id = #{itemId,jdbcType=INTEGER}
+  </select>
+
+  <select id="selectSellerByPK" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+    select
+    seller
+    from items
+    where id = #{itemId,jdbcType=INTEGER}
   </select>
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
@@ -43,10 +73,10 @@
   <insert id="insert" parameterType="com.fantj.sbmybatis.model.Item" useGeneratedKeys="true" keyProperty="id">
     insert into items (name, img_url,
       price, notes, address, 
-      seller, status)
+      seller, status, date)
     values (#{name,jdbcType=VARCHAR}, #{imgUrl,jdbcType=VARCHAR},
-      #{price,jdbcType=INTEGER}, #{notes,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
-      #{seller,jdbcType=INTEGER}, #{status,jdbcType=VARCHAR})
+      #{price,jdbcType=DOUBLE}, #{notes,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR},
+      #{seller,jdbcType=INTEGER}, #{status,jdbcType=VARCHAR}, #{date,jdbcType=VARCHAR})
   </insert>
 
   <insert id="insertSelective" parameterType="com.fantj.sbmybatis.model.Item">
@@ -76,6 +106,9 @@
       <if test="status != null">
         status,
       </if>
+      <if test="date != null">
+        date,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides=",">
       <if test="id != null">
@@ -88,7 +121,7 @@
         #{imgUrl,jdbcType=VARCHAR},
       </if>
       <if test="price != null">
-        #{price,jdbcType=INTEGER},
+        #{price,jdbcType=DOUBLE},
       </if>
       <if test="notes != null">
         #{notes,jdbcType=VARCHAR},
@@ -101,6 +134,9 @@
       </if>
       <if test="status != null">
         #{status,jdbcType=VARCHAR},
+      </if>
+      <if test="date != null">
+        #{date,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
@@ -115,7 +151,7 @@
         img_url = #{imgUrl,jdbcType=VARCHAR},
       </if>
       <if test="price != null">
-        price = #{price,jdbcType=INTEGER},
+        price = #{price,jdbcType=DOUBLE},
       </if>
       <if test="notes != null">
         notes = #{notes,jdbcType=VARCHAR},
@@ -129,6 +165,9 @@
       <if test="status != null">
         status = #{status,jdbcType=VARCHAR},
       </if>
+      <if test="date != null">
+        date = #{date,jdbcType=VARCHAR},
+      </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
@@ -137,11 +176,12 @@
     update items
     set name = #{name,jdbcType=VARCHAR},
       img_url = #{imgUrl,jdbcType=VARCHAR},
-      price = #{price,jdbcType=INTEGER},
+      price = #{price,jdbcType=DOUBLE},
       notes = #{notes,jdbcType=VARCHAR},
       address = #{address,jdbcType=VARCHAR},
       seller = #{seller,jdbcType=INTEGER},
-      status = #{status,jdbcType=VARCHAR}
+      status = #{status,jdbcType=VARCHAR},
+      date = #{date,jdbcType=VARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
 </mapper>

@@ -26,6 +26,13 @@
         where identity_type = #{arg0} and identifier = #{arg1}
     </select>
 
+    <select id="selectIdentifierByUserId" resultType="java.lang.String">
+        select
+        identifier
+        from user_auths
+        where user_id = #{userId,jdbcType=INTEGER}
+    </select>
+
     <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
         delete from user_auths
         where id = #{id,jdbcType=INTEGER}

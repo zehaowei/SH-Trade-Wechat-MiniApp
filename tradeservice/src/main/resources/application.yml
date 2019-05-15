@@ -2,6 +2,11 @@
 server:
   port: 7001
 
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
 spring:
 
   application:
@@ -28,9 +33,13 @@ spring:
     poolPreparedStatements: true
     maxOpenPreparedStatements: 20
 
-  elasticsearch:
-    cluster-name: elasticsearch
-    cluster-nodes: 127.0.0.1:9300
+  data:
+    elasticsearch:
+      cluster-name: elasticsearch-application
+      cluster-nodes: 127.0.0.1:9300
+      path:
+        logs: ../elasticsearch/log #elasticsearch日志存储目录
+        data: ../elasticsearch/data #elasticsearch数据存储目录
 
 
 mybatis:
@@ -42,3 +51,10 @@ pagehelper:
   support-methods-arguments: true
   params: count=countSql
   page-size-zero: true
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 160000000
+        readTimeout: 160000000
