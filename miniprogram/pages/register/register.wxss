@@ -1,0 +1,132 @@
+/**index.wxss**/
+@import "../../weui.wxss"; 
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  margin-bottom: 70rpx;
+}
+
+.logo{
+  width: 495rpx;
+  background-size: cover;
+  height: 220rpx
+}
+
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 180rpx;
+}
+
+.login_form{
+  display: block;
+}
+
+.container{
+  padding: 100rpx 0rpx;
+}
+
+.weui-cell__hd{
+  width: 25%;
+}
+
+.to_login{
+  margin-top: 30rpx;
+  flex-direction: row;
+  justify-content: flex-end;
+  text-align: center;
+  font-size: 0.75rem;
+  text-decoration: underline;
+  height: 1rem;
+  width: 95%;
+  line-height: 0.7rem;
+  display: flex;
+}
+
+.input_box{
+  display: flex;
+  flex-direction: column;
+  padding: 0 20rpx;
+  margin: 30rpx;
+  background-color: #f6f6f6;
+  border: solid 1rpx #d4d1d1;
+  border-radius: 10rpx;
+}
+
+.box_image{
+  width: 29rpx;
+  height: 36rpx;
+  padding: 28rpx 30rpx 28.5rpx;
+  background-size: cover;
+}
+
+.box_image_phone{
+  width: 29rpx;
+  height: 42rpx;
+  padding: 27rpx 30rpx 27.5rpx;
+  background-size: cover;
+}
+
+.box_1{
+  margin-top: 15rpx;
+  display: flex;
+}
+
+.input_1{
+  padding: 20rpx 15rpx;
+  font-size: 30rpx;
+  flex: 1;
+}
+
+.login_or_register{
+  margin: 40rpx 30rpx;
+}
+
+.login_or_register_btn{
+  font-size: 35rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  background-color: #777777;
+  color: white;
+  border-radius: 10rpx;
+}
+
+.box_verify{
+  border:none;
+  background-color: none;
+  position:relative;
+  display:block;
+  margin-left:none;
+  margin-right:none;
+  padding-left:none;
+  padding-right:none;
+  box-sizing:content-box;
+  text-align:center;
+  border-radius: 0px;
+  text-decoration:none;
+  -webkit-tap-highlight-color:none;
+  overflow:hidden;
+  padding:10rpx 20rpx 10rpx 25rpx;
+  font-size:30rpx;
+  line-height:31rpx;
+  height:31rpx;
+  border-left:solid 1px #3a3c4e;
+  margin:20rpx 0;
+  width: 60rpx;
+  color:#3a3c4e;
+}
+
+.box_verify::after{
+  border:none;
+  border-radius: none;
+}
+
+.box_verify::before{
+  border:none;
+  border-radius: none;
+}

@@ -1,0 +1,64 @@
+<!--account-->
+<view class="whole" style='height: {{windowHeight}}'>
+<view class="container">
+  <view class="header">
+    <view class="profile">
+        <image class="userinfo-avatar" src="{{accountInfo.avatarUrl}}" background-size="cover"></image>
+        <view class="idandname">
+          <view class='account-name'>
+            <text class='strong'>{{ accountInfo.nickName }}</text>
+          </view>
+          <view class='account-id'>用户名： {{accountInfo.stuID}}</view>
+        </view>
+    </view>
+    <!-- <view class="pub-order">
+      <view class="pubnum" bindtap='toPost'>
+      <view class="pub-number">{{pub_number}}</view>
+      <view class="pub-text" style="font-size: 28rpx">我发布的商品</view>
+      </view>
+      <view class="ordernum" bindtap='toOrder'>
+      <view class="order-number">{{order_number}}</view>
+      <view class="order-text" style="font-size: 28rpx">我的订单数量</view>
+      </view>
+    </view> -->
+  </view>
+
+  <view class="my-order">
+  <view class="inner">
+    <view class="tap">订单操作</view>
+    <view class="line"></view>
+    <view class="icons">
+      <view class="icon" bindtap='toOrder'>
+        <image class="icon-img" src='../../image/account/myorder.png'></image>
+        <view class="down">我的订单</view>
+      </view>
+      <view class="icon" bindtap='toHome'>
+        <image class="icon-img" src='../../image/account/buymore.png'></image>
+        <view class="down">再去逛逛</view>
+      </view>
+    </view>
+  </view>
+  </view>
+
+  <view class="about">
+  <view class="inner">
+    <view class="tap">关于</view>
+    <view class="line"></view>
+    <view class="icons" style="justify-content: flex-start; padding: 0 0 0 30rpx;">
+      <view class="icon" bindtap='toUs'>
+        <image class="icon-img" src='../../image/account/aboutus.png'></image>
+        <view class="down">关于我们</view>
+      </view>
+      <view class="icon" style="padding-left: 60rpx" bindtap='toApp'>
+        <image class="icon-img" src='../../image/account/aboutapp.png'></image>
+        <view class="down">关于应用</view>
+      </view>
+    </view>
+  </view>
+  </view>
+
+  <view class="exit" bindtap='toExit'>
+    退出登录
+  </view>
+</view>
+</view>

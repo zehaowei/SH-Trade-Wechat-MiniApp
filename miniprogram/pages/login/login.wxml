@@ -1,0 +1,39 @@
+  <!--index.wxml-->
+<view class="container">
+  <view class="container_form">
+
+    <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">{{errorMsg}}</view>  
+
+  <view class="userinfo">
+    <block>
+      <image class='logo' src='../../image/login/logo.png'>
+      </image>
+    </block>
+  </view>
+
+  <form class="login_form" bindsubmit="formSubmit" bindreset="formReset">  
+    <view class="login_info"> 
+
+        <view class='input_box'>
+          <view class='box_1' style='border-bottom: solid 1rpx #d4d1d1;'>
+            <image class='box_image' src='../../image/login/user.png'></image>
+            <input class="input_1" placeholder-style='color:#d4d1d1' placeholder='请输入账户名' type="text" maxlength="20" value="{{account}}" focus="true" name="account"></input>
+          </view>
+
+          <view class='box_1'>
+            <image class='box_image' src='../../image/login/lock.png'></image>
+              <input class="input_1" placeholder-style='color:#d4d1d1' placeholder='请输入密码' type="password" value="{{password}}" name="password"></input>
+          </view>
+        </view>
+
+        <view class="login_or_register">  
+          <button class="login_or_register_btn" formType='submit'>登录</button >
+        </view>
+
+    </view>  
+  </form>  
+</view>
+   <view class="to_register" bindtap='toRegister'>  
+  注册
+   </view>   
+</view>

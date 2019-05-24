@@ -1,0 +1,34 @@
+<import src="../wxSearch/wxSearch.wxml" />
+<view class="wxSearch-section">
+  <view class="wxSearch-pancel">
+    <input bindinput="wxSearchInput" bindfocus="wxSerchFocus" value="{{wxSearchData.value}}" bindblur="wxSearchBlur" class="wxSearch-input" placeholder='{{wxSearchData.his[0]}}' />
+    <button class="wxSearch-button" bindtap="wxSearchFn" size="mini" plain="true">搜索</button>
+  </view>
+</view>
+<template is="wxSearch" data="{{wxSearchData}}" />
+
+<view class="container">
+  <view class="index-list">
+    <view wx:if="{{ listData.length == 0 }}" class='not-found'>
+      <image src='/image/not_found.png' mode="aspectFit"></image>
+      <view>这里还什么都没有哦</view>
+    </view>
+    <view class="list {{!wxSearchData.view.isShow ?'active' : ''}}">
+      <view class="list-scroll" lower-threshold="30px">
+        <block wx:for="{{listData}}">
+          <view class="list-item" bindtap="toDetail" data-itemid="{{item.item_id}}">
+            <view class="list-item-left">
+              <image class="list-item-img" src="{{item.imgUrl}}" mode="aspectFill" />
+            </view>
+            <view class="list-item-right">
+              <view class="list-item-right-title">{{item.name}}</view>
+              <view class="list-item-right-desc">{{item.notes}}</view>
+              <view class="list-item-right-price">￥{{item.price}}</view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+
+  </view>
+</view>

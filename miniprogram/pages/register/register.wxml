@@ -1,0 +1,119 @@
+  <!--index.wxml-->
+<view class="container">
+  <view class="container_form">
+
+    <view class="weui-toptips weui-toptips_warn" wx:if="{{showTopTips}}">{{errorMsg}}</view>  
+
+  <view class="userinfo">
+    <block>
+      <image class='logo' src='../../image/login/logo.png'>
+      </image>
+    </block>
+  </view>
+
+  <form class="login_form" bindsubmit="formSubmit" bindreset="formReset">  
+    <view class="login_info"> 
+
+         <view class='input_box'>
+            <view class='box_1 box_phonenum' style='border-bottom: solid 1rpx #d4d1d1;'>
+              <image class='box_image' src='../../image/login/user.png'></image>
+              <input class="input_1" placeholder-style='color:#d4d1d1' placeholder='请输入账户名' type="text" maxlength="20" value="{{account}}" focus="true" name="account"></input>
+            </view>
+            <view class='box_1'>
+              <image class='box_image' src='../../image/login/lock.png'></image>
+                <input class="input_1" placeholder-style='color:#d4d1d1' placeholder='请输入密码' type="password" value="{{password}}" name="password"></input>
+            </view>
+
+         </view>
+
+        <view class="login_or_register">  
+          <button class="login_or_register_btn" formType='submit'>完成注册</button >
+        </view>
+    </view>  
+  </form>  
+
+  <!-- <form class="login_form" bindsubmit="formSubmit" bindreset="formReset">  
+    <view class="login_info"> 
+
+         <view class='input_box'>
+            <view class='box_1 box_phonenum' style='border-bottom: solid 1rpx #d4d1d1;'>
+              <image class='box_image_phone' src='../../image/login/phone.png' >
+              </image>
+              <input class="input_1" placeholder-style='color:#d4d1d1' placeholder='请输入手机号' type="number" pattern="[0-9]*" value="{{phonenum}}" name="phonenum" bindinput='phonenumInput' >
+              </input>
+              <button class='box_verify' bindtap="sendMessage" disabled='{{vcodeBtnDisabled}}'>{{getVcodeText}}</button>
+            </view>
+            <view class='box_1'>
+              <image class='box_image' src='../../image/login/lock.png'>
+                </image>
+                <input class="input_1" type="password" placeholder-style='color:#d4d1d1' placeholder='请输入验证码'
+                type="text" value="{{verified_code}}" name="verified_code"
+            bindinput='vcodeInput'>
+                </input>
+            </view>
+
+         </view>
+
+        <view class="login_or_register">  
+          <button class="login_or_register_btn" formType='submit'>完成注册</button >
+        </view>
+    </view>  
+  </form>   -->
+
+  <!-- <form class="login_form" bindsubmit="formSubmit" bindreset="formReset">  
+    <view class="login_info"> 
+
+        <view class="weui-cell weui-cell_input">  
+          <view class="weui-cell__hd">  
+            <view class="weui-label">账号</view>  
+          </view>  
+          <view class="weui-cell__bd">  
+            <input class="weui-input" ype="number" pattern="[0-9]*" maxlength="13" value="{{account}}" focus="true" name="account"
+             bindinput='accountInput'/>  
+          </view>
+        </view>  
+
+        <view class="weui-cell weui-cell_input">  
+          <view class="weui-cell__hd">  
+            <view class="weui-label">密码</view>  
+          </view>  
+          <view class="weui-cell__bd">  
+            <input class="weui-input" type="password" value="{{password}}" name="password"/>  
+          </view>  
+        </view>  
+
+         <view class="weui-cell weui-cell_input" wx:if="{{!userCreated}}">  
+          <view class="weui-cell__hd">  
+            <view class="weui-label">手机号</view>  
+          </view>  
+          <view class="weui-cell__bd">  
+            <input class="weui-input" type="number" pattern="[0-9]*" value="{{phonenum}}" name="phonenum"
+             bindinput='phonenumInput'/>  
+          </view>
+          <view class="weui-cell_ft">  
+            <button class="weui-vcode-btn vcode {{sendmsg}}" bindtap="sendMessage" disabled='{{vcodeBtnDisabled}}'>{{getVcodeText}}</button>
+          </view>  
+        </view>  
+
+        <view class="weui-cell weui-cell_input" wx:if="{{!userCreated}}">  
+          <view class="weui-cell__hd">  
+            <view class="weui-label">验证码</view>  
+          </view>  
+          <view class="weui-cell__bd">  
+            <input class="weui-input" type="text" value="{{verified_code}}" name="verified_code"
+            bindinput='vcodeInput'/>  
+          </view>  
+        </view>  
+
+        <view class="weui-btn-area">  
+          <button class="weui-btn" type="primary" plain="true" formType='submit'>注册</button>
+        </view>
+    </view>  
+  </form>   -->
+
+  <view class="to_login" bindtap='toLogin'>  
+  登陆
+  </view>  
+
+   </view>
+</view>

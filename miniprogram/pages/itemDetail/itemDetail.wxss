@@ -1,0 +1,209 @@
+/* pages/bookDetail/bookDetail.wxss */
+
+page {
+  background: rgb(237, 237, 237);
+  padding-bottom: 1rpx;
+}
+
+.line {
+  height: 1px;
+  background: #eee;
+}
+
+.title-image {
+  width: 100%;
+  height: 400rpx;
+  margin-top: 10rpx;
+}
+
+.body {
+  padding: 30rpx 70rpx 10rpx 70rpx;
+  background: white;
+  margin-bottom: 160rpx;
+}
+
+.body .title {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 10rpx;
+}
+
+.body .info-item {
+  margin: 20rpx 0 20rpx 0;
+  font-size: 14px;
+}
+
+.body .item-index {
+  font-weight: bold;
+}
+
+/* .foot {
+  border-top: solid #dddddd 1px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  font-size: 12px;
+  background: white;
+}
+
+.foot .chat{
+  text-align: center;
+  width: 50%;
+  border-right: solid gray 1px;
+  margin: 10rpx;
+} */
+
+/* .foot .buy{
+  text-align: center;
+  width: 50%;
+  margin: 10rpx;
+}
+
+.foot image {
+  width: 40rpx;
+  height: 40rpx;
+} */
+
+.foot {
+  border-top: solid #ddd 1px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  font-size: 14px;
+  background: white;
+  justify-content: space-between;
+}
+
+.foot view {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+}
+
+.foot view .origin-price{
+  margin: auto 10rpx auto 0;
+  color: gray;
+  text-decoration: line-through;
+}
+
+.foot view {
+  margin-left: 20rpx;
+  margin-top: auto;
+  margin-bottom: auto;
+  color: gray;
+}
+
+.foot view text {
+  color: black;
+}
+
+.buy {
+  margin: 15rpx;
+  color: white;
+  background-color: #3a3c4e;
+}
+
+.copy {
+  width: 18px;
+  height: 18px;
+}
+
+.card {
+  background: white;
+  margin: 20rpx 0 20rpx 0;
+  padding: 1rpx 30rpx 30rpx 30rpx;
+  box-shadow: 2px 2px 2px #ccc;
+}
+
+.center {
+  text-align: center;
+}
+
+.cover {
+  width: 70%;
+  max-width: 70%;
+  height: 230px;
+  margin: auto;
+  border-radius: 6px;
+  box-shadow: 2px 2px 2px #ccc;
+}
+
+.title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20rpx;
+}
+
+.category {
+  font-size: 14px;
+  margin: 20rpx;
+}
+
+.course {
+  font-size: 16px;
+  margin: 20rpx;
+}
+
+.introduction {
+  color: gray;
+  font-size: 14px;
+  margin: 20rpx;
+}
+
+.more {
+  color: cornflowerblue;
+}
+
+.headline {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 20rpx 0 20rpx 0;
+}
+
+.seller-info {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+  align-items: center;
+  margin-top: 25rpx;
+}
+
+.sellerinfo-avatar {
+  width: 80rpx;
+  height: 80rpx;
+  margin: auto;
+  border-radius: 50%;
+}
+
+.sellerinfo-chat {
+  width: 50rpx;
+  height: 50rpx;
+  margin: auto;
+}
+
+.sellerinfo-text {
+  width: 500rpx;
+  margin: auto 10rpx auto 10rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sellerinfo-nickname {
+  font-size: 16px;
+  margin-bottom: 5rpx;
+}
+
+.sellerinfo-signature {
+  font-size: 14px;
+  color: gray;
+}
+
+.plain-text {
+  font-size: 14px;
+  margin: 30rpx 0 10rpx 0;
+}

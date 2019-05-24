@@ -1,0 +1,42 @@
+<!--index.wxml-->
+<import src="../wxSearch/wxSearch.wxml" />
+
+<view class="head">
+
+  <view class="wxSearch-section">
+    <view class="wxSearch-pancel">
+      <input bindinput="wxSearchInput" bindfocus="wxSerchFocus" value="{{wxSearchData.value}}" bindblur="wxSearchBlur" class="wxSearch-input" placeholder="搜索商品" />
+      <button class="wxSearch-button" style="display:{{isSearch ? 'block' : 'none'}}" bindtap="wxSearchFn" size="mini" plain="true">搜索</button>
+      <button class="wxSearch-button" style="display:{{isSearch ? 'none' : 'block'}}" bindtap="postBook" size="mini" plain="true">发布</button>
+    </view>
+  </view>
+
+  <template is="wxSearch" data="{{wxSearchData}}" />
+
+</view>
+
+<view class="container">
+  <view class="index-list">
+    <view wx:if="{{ currentList.length == 0 }}" class='not-found'>
+      <image src='/image/not_found.png' mode="aspectFit"></image>
+      <view>这里还什么都没有哦</view>
+    </view>
+    <view class="list {{!wxSearchData.view.isShow ?'active' : ''}}">
+      <view class="list-scroll" lower-threshold="30px">
+        <block wx:for="{{currentList}}">
+          <view class="list-item" wx:if="{{index < limit}}" bindtap="toDetail" data-itemid="{{item.id}}">
+            <view class="list-item-left">
+              <image class="list-item-img" src="{{item.imgUrl}}" mode="aspectFill" />
+            </view>
+            <view class="list-item-right">
+              <view class="list-item-right-title">{{item.name}}</view>
+              <view class="list-item-right-desc">{{item.notes}}</view>
+              <view class="list-item-right-price">￥{{item.price}}</view>
+            </view>
+          </view>
+        </block>
+      </view>
+    </view>
+
+  </view>
+</view>

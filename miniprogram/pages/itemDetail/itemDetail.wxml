@@ -1,0 +1,56 @@
+<!--pages/itemDetail/itemDetail.wxml-->
+<scroll-view scroll-y style='margin-bottom: 80rpx;'>
+  <view>
+    <view class='card center' style='margin-top: 0'>
+      <swiper style='height: 240px' indicator-dots="true">
+        <swiper-item wx:for="{{ item.imgs }}"  style='margin: auto'>
+          <image class='cover' src="{{item}}" mode='aspectFill' bindtap='toPreview' data-index='{{index}}'></image>
+        </swiper-item>
+      </swiper>
+      
+      <view class='title'>{{item.name}} 
+      <image bindtap='toCopy' class='copy'src='/image/share.png'></image>
+      </view>
+      
+    </view>
+
+    <view class='card'>
+        <view class='headline'>
+        卖家信息
+        </view>
+        <view class='line'>
+        </view>
+        <view class='seller-info'>
+          <image class="sellerinfo-avatar" src="{{ item.seller.avatar }}" background-size="cover"></image>
+          <view class='sellerinfo-text'>
+            <view class='sellerinfo-nickname'>{{ item.seller.nickname }}</view>
+          </view>
+        </view>
+    </view>
+
+    <view class='card'>
+      <view class='headline'>交易地址</view>
+      <view class='line'></view>
+      <view class='.plain-text'>{{item.address}}</view>
+    </view>
+
+    <view class='card'>
+      <view class='headline'>备注</view>
+      <view class='line'></view>
+      <view class='.plain-text'>{{ item.notes }}</view>
+    </view>
+
+  </view>
+</scroll-view>
+
+<view class='foot' wx:if="{{ item.seller.identifier != username }}">
+  <view>
+    <button class='buy' size='mini' bindtap='toBuy'>购买 ¥{{ item.price }}</button>
+  </view>
+</view>
+
+<modal title="购买" hidden="{{modalHidden}}" bindcancel="onModalCancel" bindconfirm="onModalConfirm">
+  <view>
+  <text>该操作会锁定商品，请您尽快与卖家联系交易!</text>
+  </view>
+</modal>

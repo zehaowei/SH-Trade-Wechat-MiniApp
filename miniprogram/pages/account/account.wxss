@@ -1,0 +1,147 @@
+/* pages/account/account.wxss */
+page{
+  background: #f8f8f8;
+}
+
+.whole{
+  background: #f8f8f8;
+}
+
+.container{
+  width: 750rpx;
+}
+
+.header{
+  width: 750rpx;
+  height: 250rpx;
+  background: white;
+  padding-top: 1rpx;
+}
+
+.header .profile{
+  width: 690rpx;
+  height: 190rpx; 
+  margin: 30rpx 30rpx 30rpx 30rpx;
+  border:2px;
+  border-radius:25rpx;
+  background: #f8f8f8;
+  display: flex;
+  flex-direction: row;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 31rpx 35rpx 31rpx 35rpx;
+  border-radius: 50%;
+}
+
+.idandname{
+  margin-top: 48rpx;
+  margin-bottom: 22rpx;
+}
+
+.account-id{
+  display: block;
+  font-size: 28rpx;
+}
+
+.account-name{
+  display: block;
+  font-size: 34rpx;
+  margin-bottom: 7%;
+}
+
+.header .pub-order{
+  width: 690rpx;
+  padding: 25rpx 30rpx 25rpx 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.header .pub-order .pubnum{
+  font-size: 34rpx;
+  font-weight: 500;
+  margin-left: 35rpx;
+  margin-right: 40rpx;
+  text-align: center;
+}
+
+.header .pub-order .ordernum{
+  font-size: 34rpx;
+  font-weight: 500;
+  margin-left: 40rpx;
+  margin-right: 35rpx;
+  text-align: center;
+}
+
+.my-order{
+  width: 750rpx;
+  height: 270rpx;
+  background: white;
+  margin-top: 30rpx;
+  display: flex;
+}
+
+.about{
+  width: 750rpx;
+  background: white;
+  margin-top: 30rpx;
+  display: flex;
+}
+
+.inner{
+  width: 690rpx;
+  padding: 25rpx 30rpx;
+}
+
+.line{
+  height: 4rpx;
+  background: #fbf8f4;
+  margin: 20rpx 0rpx 25rpx 0rpx;
+}
+
+.tap{
+  width: 690rpx;
+  font-size: 30rpx;
+}
+
+.icons{
+  width: 690rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  /* padding: 0 0 25rpx 0; */
+}
+
+.icons .icon{
+  display: flex;
+  flex-direction: column;
+}
+
+.icons .icon .icon-img{
+  width: 64rpx;
+  height: 64rpx;
+  padding: 0 20rpx 0 20rpx;
+}
+
+.icons .icon .down{
+  font-size: 25rpx;
+  text-align: center;
+  margin: 15rpx 0 0 0;
+}
+
+.exit{
+  width: 750rpx;
+  height: 85rpx;
+  background: white;
+  margin-top: 30rpx;
+  font-size: 30rpx;
+  text-align: center;
+  line-height: 85rpx;
+}
+
+.strong{
+  font-weight: bold;
+}

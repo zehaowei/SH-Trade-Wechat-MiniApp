@@ -1,0 +1,185 @@
+@import "/utils/not-found.wxss";
+
+page {
+  background: rgb(240, 240, 240);
+}
+
+.line {
+    height: 1px;
+    background: #eee;
+}
+
+.navbar{  
+  flex: none;  
+  display: flex;  
+  background: #fff;
+  font-size: 14px;
+  border-bottom: #eee 1rpx solid;
+  border-top: #eee 1rpx solid;
+  position: fixed;
+  margin-top: 0;
+  width: 100%;
+  z-index: 100;
+}  
+
+.navbar .item{  
+  position: relative;
+  flex: auto;
+  text-align: center;
+  line-height: 80rpx;
+  color: gray;
+  width: 20%;
+}  
+.navbar .item.active{  
+  color: black;
+}  
+.navbar .item.active:after{  
+  content: "";  
+  display: block;  
+  position: absolute;  
+  bottom: 0;  
+  left: 0;  
+  right: 0;  
+  height: 4rpx;  
+  background: black;  
+}  
+
+
+.card {
+  background: white;
+  margin-bottom: 20rpx;
+  padding: 30rpx 0 1rpx 0;
+}
+
+.header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.spacing {
+  padding-left: 20rpx;
+  padding-right: 20prx;
+}
+
+.avatar {
+  width: 40rpx;
+  height: 40rpx;
+  border-radius: 50%;
+}
+
+.personal {
+  margin: auto 0 auto 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.personal view{
+  font-size: 14px;
+  margin: auto 0 auto 10px;
+}
+
+.state{
+  font-size: 14px;
+  margin: auto 40rpx auto 0;
+}
+
+.book {
+  margin-top: 20rpx;
+  background: rgb(240, 240, 240);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.cover {
+  height: 160rpx;
+  width: 160rpx;
+  background: white;
+  margin: 20rpx 0 20rpx 40rpx;
+  text-align: center;
+}
+
+.cover image{
+  max-height: 150rpx;
+  max-width: 150rpx;
+  margin: auto;
+}
+
+.detail, .number {
+  margin: 30rpx 0 30rpx 30rpx;
+}
+
+.detail {
+  width: 420rpx;
+}
+
+.number {
+  width: 150rpx;
+  text-align: right;
+  margin-right: 40rpx;
+} 
+
+.name, .price {
+  font-size: 15px;
+}
+
+.course, .total, .amount {
+  margin-top: 10rpx;
+  font-size: 14px;
+  color: gray;
+}
+
+.trade {
+  text-align: right;
+  margin-top: 20rpx;
+  margin-bottom: 20rpx;
+  margin-right: 20rpx;
+}
+
+.date {
+  font-size: 14px;
+}
+
+.place {
+  font-size: 14px;
+  margin-left: 30rpx;
+  margin-right: 10rpx;
+}
+
+.strong {
+  font-weight: bold;
+}
+
+.btn {
+  text-align: right;
+  margin-right: 20rpx;
+  vertical-align: middle;
+
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.button {
+  vertical-align: middle;
+  background: white;
+  margin-left: 20rpx;
+  padding: 2px 5px;
+
+  background: white;
+  color: #ccc;
+  border: 1px #ccc solid;
+  margin: 10rpx;
+  border-radius: 200px;
+  font-size: 14px;
+  width: 140rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  justify-content: center;
+}
+
+.button.active{
+  color: black;
+  border: 1px black solid;
+}

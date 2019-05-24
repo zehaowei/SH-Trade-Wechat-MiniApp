@@ -1,0 +1,127 @@
+/**index.wxss**/
+ @import "../wxSearch/wxSearch.wxss"; 
+ @import "/weui.wxss";
+ @import "/utils/not-found.wxss";
+page{
+  background: #f8f8f8;
+}
+
+.head{
+  position: fixed;
+  width: 100%;
+  height: 80px;
+}
+
+.container{
+  padding: 15px 0;
+}
+.navbar{
+  color: #b8b8b8;
+  width: 100%;
+  height: 38px;
+  display: block;
+  background-color: white;
+  border-bottom-style: solid;
+  border-bottom-color: #eee;
+  border-bottom-width: 3rpx;
+}
+
+.navbar view{
+  display: block;
+  text-align: center;
+  font-size: 13px; 
+  float: left;
+  width: 25%;
+  padding-top: 10px;
+  padding-bottom: 10px; 
+}
+
+.navbar .active {
+  color: #3a3c4e;
+  padding-bottom: 7px; 
+  border-bottom-style: solid;
+  border-bottom-color: black;
+  border-bottom-width: 4rpx;
+}
+
+.list .active {
+  color: #3a3c4e;
+}
+
+.index-list{
+  width: 100%;
+  margin-top: 45px; 
+}
+
+.index-list .list{
+  display: none;
+}
+
+.index-list .list.active{
+  display: flex;
+}
+
+.index-list .list.active .list-scroll{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.index-list .list.active .list-scroll .list-item{
+  display: flex;
+  flex-direction: row;
+  height: 250rpx;
+  width: 690rpx;
+  margin: 2% 30rpx 2% 30rpx;
+  box-shadow:3px 5px 12px #DEDEDE;
+  background: white;
+}
+
+.index-list .list.active .list-scroll .list-item .list-item-left .list-item-img{
+  width: 160rpx;
+  height: 200rpx;
+}
+
+.index-list .list.active .list-scroll .list-item .list-item-left{
+  padding: 25rpx 40rpx 25rpx 40rpx;
+  display: flex;
+  height: 200rpx;
+}
+
+.index-list .list.active .list-scroll .list-item .list-item-right{
+  padding-top: 60rpx;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.list-item-right-title{
+  font-size: 18px;
+  color: black;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.list-item-right-desc{
+  font-size: 13px;
+  color: grey;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.list-item-right-price{
+  padding-top: 4%;
+  font-size: 15px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: #3399ff;
+  width: 100%;
+}
+
+.wxSearch-button{
+  line-height: 2rem !important;
+}

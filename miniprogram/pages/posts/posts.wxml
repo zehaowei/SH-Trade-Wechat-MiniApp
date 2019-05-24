@@ -1,0 +1,65 @@
+<view class='navbar'>
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+</view>
+
+<view style='height: 80rpx'></view>
+
+<view wx:if="{{ listData.length == 0 }}" class='not-found'>
+  <image src='/image/not_found.png' mode="aspectFit"></image>
+  <view>这里还什么都没有哦</view>
+</view>
+
+<view class='card' wx:for="{{ listData }}" wx:key="item">
+    <view class='header spacing'>
+        <view class='state'>{{ item.status }}</view>  
+    </view>
+
+    <view class='book' bindtap='toDetail' data-itemid='{{ item.id }}'>
+      <view class='cover'>
+        <image src='{{ item.imgUrl }}' mode='aspectFit'></image>
+      </view>
+
+      <view class='detail'>
+        <view class='name'>{{ item.name }}</view>
+      </view>
+
+      <view class='number'>
+        <view class='price'>¥ {{ item.price }}</view>
+      </view>
+    </view>
+
+    <view class='trade'>
+      <text class='date'><text class='strong'>发布日期：</text>{{ item.date }}</text>
+      <text class='place'><text class='strong'>交易地点：</text>{{ item.address }}</text>
+    </view>
+
+    <view class='line'></view>
+
+    <view class='btn'>
+       <view class='button cancel {{ item.status == "已下架"? "" : "active" }}' bindtap='{{ item.status == "已下架"? "" : "soldOut" }}' data-itemid='{{ item.id }}'>下架</view> 
+      <!-- <button class='button button-small button-pill button-border-thin disabled'>下架</button> -->
+    </view>
+  </view>
+<!-- 
+<view class="container">
+  <view class="index-list" style="margin-top:10px">
+    <view class="list {{!wxSearchData.view.isShow ?'active' : ''}}">
+        <view class="list-scroll" lower-threshold="30px">
+          <block wx:for="{{listData}}">
+            <view class="list-item" bindtap="toDetail" data-booknum="{{item.book_id}}">
+                <view class="list-item-left">
+                  <image class="list-item-img" src="{{item.imgUrl}}" mode="aspectFill" />
+                </view>
+                <view class="list-item-right">
+                  <view class="list-item-right-title">{{item.title}}</view>
+                  <view class="list-item-right-desc">{{item.notes}}</view>
+                  <view class="list-item-right-price">￥{{item.price}}</view>
+                </view>  
+            </view>
+          </block>
+        </view>
+    </view>
+
+  </view>
+
+</view> -->

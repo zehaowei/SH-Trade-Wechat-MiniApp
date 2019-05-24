@@ -1,0 +1,107 @@
+page {
+  background: #eee;
+}
+
+.line {
+  height: 1px;
+  background: #eee;
+}
+
+.margin-around {
+  margin: 20rpx 30rpx;
+}
+
+.bookName {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between
+}
+
+.bookName input{
+  width: 580rpx;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.bookName image{
+  width: 52rpx;
+  height: 52rpx;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.card {
+  background: white;
+  font-size: 16px;
+  padding: 1rpx;
+  margin-bottom: 20rpx;
+}
+
+.bookIntro {
+  width: 92%;
+}
+
+.images{
+  max-width: 100%;
+  margin:20rpx 10rpx;
+  padding: 0;
+
+  list-style: none;
+  
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  
+  -webkit-flex-flow: row wrap;
+}
+
+.thumbnail {
+  height: 128rpx;
+  width: 128rpx;
+  margin: 10rpx;
+  background: #eee;
+}
+
+.image-add image{
+  height: 54rpx;
+  width: 54rpx;
+}
+
+.image-add {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-add text{
+  color: gray;
+  font-size: 12px;
+}
+
+.line-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.line-label {
+  width: 100rpx;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.line-input {
+  width: 580rpx;
+  margin-left: 20rpx;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#send-btn{
+  background: rgb(55,57,71);
+  margin: 10rpx;
+  color: white;
+}

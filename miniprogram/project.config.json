@@ -1,0 +1,105 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"autoAudits": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.0.2",
+	"appid": "wxd356a0a4bef36ce1",
+	"projectname": "Bookinnew",
+	"isGameTourist": false,
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 9,
+			"list": [
+				{
+					"id": -1,
+					"name": "pages/orders/orders",
+					"pathName": "pages/orders/orders",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pages/settings/settings",
+					"pathName": "pages/settings/settings",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pages/posts/posts",
+					"pathName": "pages/posts/posts",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pages/login/login",
+					"pathName": "pages/login/login",
+					"query": ""
+				},
+				{
+					"id": 5,
+					"name": "pages/itemDetail/itemDetail",
+					"pathName": "pages/itemDetail/itemDetail",
+					"query": "id=8"
+				},
+				{
+					"id": -1,
+					"name": "pages/register/register",
+					"pathName": "pages/register/register",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pages/mainpage/mainpage",
+					"pathName": "pages/mainpage/mainpage",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "pages/publishitemss/publishitems",
+					"pathName": "pages/publishitems/publishitems",
+					"query": ""
+				},
+				{
+					"id": 11,
+					"name": "pages/orderDetail/orderDetail",
+					"pathName": "pages/orderDetail/orderDetail",
+					"query": "id=6"
+				},
+				{
+					"id": 13,
+					"name": "pages/itemDetail/itemDetail",
+					"pathName": "pages/bookDetail/bookDetail",
+					"query": "id=16"
+				},
+				{
+					"id": -1,
+					"name": "pages/account/account",
+					"pathName": "pages/account/account",
+					"query": ""
+				}
+			]
+		}
+	}
+}

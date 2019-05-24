@@ -1,0 +1,38 @@
+<!--index.wxml-->
+<form  bindsubmit="formSubmit" bindreset="formReset">
+<view class='card'>
+  <view class='margin-around bookName'>
+    <input type='text' placeholder='商品名' value="{{bookName}}" name="bookName"></input>
+  </view>
+
+  <view class='line'></view>
+
+  <textarea class='bookIntro margin-around' placeholder='备注 请描述一下您商品的情况以及联系方式' maxlength='-1' value="{{note}}" name="note"></textarea>
+
+  <view class='images'>
+    <image class='thumbnail' mode="aspectFill" wx:for="{{ imageUrls }}" wx:if="{{ item != null }}" src='{{ item }}' data-index='{{index}}' bindtap='toDelete'></image>
+    <view class='thumbnail image-add'>
+      <image src='/image/add.png' bindtap='chooseImage'></image>
+      <text>添加</text>
+    </view>
+  </view>
+</view>
+
+<view class='card'>
+  <view class='margin-around line-info'>
+    <text class='line-label'>价格</text>
+    <input class='line-input' type='digit' value="{{price}}" name="price"></input>
+  </view>
+
+  <view class='line'></view>
+
+  <view class='margin-around line-info'>
+    <text class='line-label'>地址</text>
+    <input class='line-input' value="{{address}}" name="address"></input>
+  </view>
+</view>
+
+<view>
+  <button id='send-btn' formType='submit'>确定发布</button>
+</view>
+</form>

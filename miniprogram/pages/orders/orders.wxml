@@ -1,0 +1,67 @@
+
+<view class='navbar'>
+  <text wx:for="{{navbar}}" data-idx="{{index}}" class="item {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">{{item}}</text>
+</view>
+
+<view style='height: 80rpx'></view>
+
+<view class='content'>
+<view wx:if="{{ orders.length == 0 }}" class='not-found'>
+  <image src='/image/not_found.png' mode="aspectFit"></image>
+  <view>这里还什么都没有哦</view>
+</view>
+  <view class='card' wx:for="{{ orders }}" wx:key="item">
+    
+    <view class='header spacing'>
+      
+      <view class='personal' wx:if="{{ username == item.buyer.identifier }}">
+        <image class="avatar" src="{{ item.seller.avatar }}" background-size="cover"></image>
+        <view>{{ item.seller.nickname }}</view>
+      </view>
+      
+      <view class='personal' wx:else>
+        <image class="avatar" src="{{ item.buyer.avatar }}" background-size="cover"></image>
+        <view>{{ item.buyer.nickname }}</view>
+      </view>
+
+      <view class='state'>{{ item.status }}</view>
+
+    </view>
+
+    <view class='book' bindtap='toItemDetail' data-itemid='{{ item.itemPublish.id }}'>
+      <view class='cover'>
+        <image src='{{ item.itemPublish.imgUrl }}' mode='aspectFit'></image>
+      </view>
+
+      <view class='detail'>
+        <view class='name'>{{ item.itemPublish.name }}</view>
+      </view>
+
+      <view class='number'>
+        <view class='price'>¥ {{ item.itemPublish.price }}</view>
+      </view>
+    </view>
+
+    <view class='trade'>
+      <text class='date'><text class='strong'>下单日期：</text>{{ item.date }}</text>
+      <text class='place'><text class='strong'>交易地点：</text>{{ item.itemPublish.address }}</text>
+    </view>
+
+    <view class='line'></view>
+
+    <view class='btn' wx:if="{{username == item.buyer.identifier && item.status === '交易中'}}">
+    <view class='button cancel active' size='mini' data-order='{{ item.id }}' bindtap='toCancelOrder'>取消订单</view>
+      <view class='button finish' size='mini'>完成订单</view>
+    </view>
+
+    <view class='btn' wx:elif="{{username != item.buyer.identifier && item.status === '交易中'}}">
+    <view class='button cancel active' size='mini' data-order='{{ item.id }}' bindtap='toCancelOrder'>取消订单</view>
+      <view class='button finish active' size='mini' data-order='{{ item.id }}' bindtap='toFinishOrder'>完成订单</view>
+    </view>
+
+    <view class='btn' wx:elif="{{item.status === '已取消' || item.status === '已完成'}}">
+      <view class='button cancel' size='mini'>取消订单</view>
+    </view>
+
+  </view>
+</view>
